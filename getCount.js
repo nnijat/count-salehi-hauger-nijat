@@ -1,16 +1,17 @@
 "use strict"
 
 function getCount(string) {
-    let newStr = String(string).toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
-    let freq = [];
-    let character = [];
-    for (var i=0; i<newStr.length;i++) {
-        character = newStr.charAt(i);
-        if (freq[character]) {
-           freq[character]++;
+    //  new Array------//to Lower----//Take special char out---//take space out---// convert to array---// sort array
+    let arr = String(string).toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '').split('').sort();
+    let count = [];
+    let character;
+    for (var i = 0; i < arr.length; i++) {
+        character = arr[i];
+        if (count[character]) {
+            count[character]++;
         } else {
-           freq[character] = 1;
+            count[character] = 1;
         }
     }
-    return freq;
+    return count;
 };
