@@ -1,7 +1,10 @@
 "use strict"
 
-function getCount(string) {
-    //  new Array------//to Lower----//Take special char out---//take space out---// convert to array---// sort array
+let submitBtn = document.getElementById('submit');
+
+submitBtn.onclick = function getCount() {
+    let string = document.getElementById('input').value;
+    //  new Array------//to Lower----//Take special char out---//take space out---//convert to array---//sort array
     let arr = String(string).toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '').split('').sort();
     let count = [];
     let character;
@@ -13,5 +16,5 @@ function getCount(string) {
             count[character] = 1;
         }
     }
-    return count;
+    return document.getElementById('result').innerText = count; // having issue to returning "count" value
 };

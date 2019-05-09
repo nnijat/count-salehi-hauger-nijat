@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,21 @@
     <link rel="stylesheet" href="./index.css">
     <title>Letter Count</title>
 </head>
+
 <body>
     <h1>Enter a word or sentence.</h1>
-    <div id="Count">
-        <form id="typehere">
-            <textarea rows="20" cols="80" id="text"></textarea>
-            <br>
-            <input type="submit" value="Submit">
-        </form>
-
+    <div class="container">
+        <div>
+            <label for="english">Enter Your Input:</label>
+            <textarea id="input" type="text"></textarea>
+        </div>
+        <button id="submit">Submit</button>
+        <div>
+            <label for="english">Count Result:</label>
+            <output id="result" class="Count"></output>
+        </div>
     </div>
-<script src="./getCount.js"></script>
+    <script src="./getCount.js"></script>
 </body>
+
 </html>
