@@ -16,5 +16,18 @@ submitBtn.onclick = function getCount() {
             count[character] = 1;
         }
     }
-    return document.getElementById('result').innerText = count; // having issue to returning "count" value
+    console.log("This is: " + convertObjKeysToItems(count));
+    return document.getElementById('result').innerText = convertObjKeysToItems(count);
 };
+
+// This is the halper method to convert obj to array which HTML takes 
+function convertObjKeysToItems(obj) {
+    var itemArray = [];
+    Object.keys(obj).forEach(function (key) {
+        var item = [];
+        item.push(key);
+        item.push(obj[key]);
+        itemArray.push("[" + item + "]");
+    });
+    return itemArray;
+}
